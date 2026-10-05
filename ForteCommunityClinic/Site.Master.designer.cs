@@ -12,6 +12,7 @@ namespace ForteCommunityClinic
 
 
     public partial class SiteMaster
+
     {
 
         /// <summary>
@@ -31,6 +32,15 @@ namespace ForteCommunityClinic
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
+        /// phUserBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phUserBar;
 
         /// <summary>
         /// lblUnreadCount control.
@@ -58,6 +68,15 @@ namespace ForteCommunityClinic
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnLogout;
+
+        /// <summary>
+        /// phSidebar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phSidebar;
 
         /// <summary>
         /// phMyProfileNav control.
@@ -96,22 +115,13 @@ namespace ForteCommunityClinic
         protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkAppointments;
 
         /// <summary>
-        /// phNursingNav control.
+        /// phTodaysPatientsNav control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phNursingNav;
-
-        /// <summary>
-        /// phConsultationsNav control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phConsultationsNav;
+        protected global::System.Web.UI.WebControls.PlaceHolder phTodaysPatientsNav;
 
         /// <summary>
         /// phPharmacyNav control.
@@ -157,15 +167,6 @@ namespace ForteCommunityClinic
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phReportsNav;
-
-        /// <summary>
-        /// phStaffApprovalsNav control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phStaffApprovalsNav;
 
         /// <summary>
         /// phAdminNav control.

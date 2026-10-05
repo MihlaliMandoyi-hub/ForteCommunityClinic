@@ -15,93 +15,93 @@ namespace ForteCommunityClinic
     {
 
         /// <summary>
-        /// lblTodaysAppointments control.
+        /// litTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTodaysAppointments;
+        protected global::System.Web.UI.WebControls.Literal litTitle;
 
         /// <summary>
-        /// lblRegisteredPatients control.
+        /// litSubtitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRegisteredPatients;
+        protected global::System.Web.UI.WebControls.Literal litSubtitle;
 
         /// <summary>
-        /// lblLowStock control.
+        /// rptCards control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLowStock;
+        protected global::System.Web.UI.WebControls.Repeater rptCards;
 
         /// <summary>
-        /// lblPendingClaims control.
+        /// rptActions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPendingClaims;
+        protected global::System.Web.UI.WebControls.Repeater rptActions;
 
         /// <summary>
-        /// lblTodaysRevenue control.
+        /// pnlTable1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTodaysRevenue;
+        protected global::System.Web.UI.WebControls.Panel pnlTable1;
 
         /// <summary>
-        /// lblMissedAppointments control.
+        /// litTable1Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMissedAppointments;
+        protected global::System.Web.UI.WebControls.Literal litTable1Title;
 
         /// <summary>
-        /// lblCompletedConsultations control.
+        /// gvTable1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCompletedConsultations;
+        protected global::System.Web.UI.WebControls.GridView gvTable1;
 
         /// <summary>
-        /// lblOutstandingBills control.
+        /// pnlTable2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOutstandingBills;
+        protected global::System.Web.UI.WebControls.Panel pnlTable2;
 
         /// <summary>
-        /// gvTodaysAppointments control.
+        /// litTable2Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTodaysAppointments;
+        protected global::System.Web.UI.WebControls.Literal litTable2Title;
 
         /// <summary>
-        /// gvLowStock control.
+        /// gvTable2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvLowStock;
+        protected global::System.Web.UI.WebControls.GridView gvTable2;
     }
 }

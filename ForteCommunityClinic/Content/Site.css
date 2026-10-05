@@ -1,107 +1,231 @@
 ﻿:root {
-    --clinic-teal-dark: #00695C;
-    --clinic-teal: #00897B;
-    --clinic-blue: #1976D2;
-    --clinic-blue-light: #E3F2FD;
-    --clinic-teal-light: #E0F2F1;
-    --clinic-success: #2E7D32;
-    --clinic-warning: #F9A825;
-    --clinic-danger: #C62828;
-    --clinic-bg: #F5F7FA;
-    --clinic-card: #FFFFFF;
-    --clinic-text: #263238;
+    --ufh-blue: #004B87;
+    --ufh-blue-dark: #003866;
+    --ufh-gold: #FFC72C;
+    --ufh-black: #000000;
+    --ufh-white: #FFFFFF;
+    --ufh-grey-100: #F3F4F6;
+    --ufh-grey-300: #D5D8DD;
+    --ufh-grey-600: #5B6169;
 }
 
 body {
-    background-color: var(--clinic-bg);
-    color: var(--clinic-text);
+    background-color: var(--ufh-grey-100);
+    color: #1A1A1A;
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
+/* ---------- Top bar ---------- */
 .top-navbar {
-    background-color: var(--clinic-teal-dark);
+    background-color: var(--ufh-blue);
+    border-bottom: 3px solid var(--ufh-gold);
     height: 56px;
 }
 
 .clinic-brand {
-    color: #fff;
+    color: var(--ufh-white);
     font-weight: 600;
     font-size: 1.1rem;
-    margin-left: 8px;
 }
 
+    .clinic-brand .bi {
+        margin-right: 6px;
+    }
+
+.badge-count {
+    background-color: var(--ufh-gold);
+    color: var(--ufh-black);
+}
+
+/* ---------- Layout ---------- */
 .clinic-layout {
     display: flex;
     min-height: calc(100vh - 56px - 40px);
 }
 
 .clinic-sidebar {
-    width: 220px;
-    background-color: var(--clinic-teal);
+    width: 230px;
+    background-color: var(--ufh-black);
     padding-top: 12px;
     flex-shrink: 0;
 }
 
     .clinic-sidebar .nav-link {
-        color: #E0F2F1;
+        color: #D9D9D9;
         padding: 10px 16px;
         border-left: 3px solid transparent;
     }
 
+        .clinic-sidebar .nav-link .bi {
+            margin-right: 10px;
+            opacity: 0.7;
+        }
+
         .clinic-sidebar .nav-link:hover,
         .clinic-sidebar .nav-link.active {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-left-color: #fff;
-            color: #fff;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-left-color: var(--ufh-gold);
+            color: var(--ufh-white);
         }
 
 .clinic-main {
     flex-grow: 1;
     padding: 24px;
+    min-width: 0;
 }
 
 .clinic-footer {
-    background-color: var(--clinic-teal-dark);
-    color: #E0F2F1;
+    background-color: var(--ufh-black);
+    color: #BFBFBF;
     font-size: 0.85rem;
     height: 40px;
+    line-height: 24px;
 }
 
-/* Reusable dashboard/card styles for later phases */
+/* ---------- Cards ---------- */
 .clinic-card {
-    background-color: var(--clinic-card);
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    background-color: var(--ufh-white);
+    border-radius: 6px;
+    border: 1px solid var(--ufh-grey-300);
     padding: 20px;
 }
 
 .clinic-page-title {
-    color: var(--clinic-teal-dark);
+    color: var(--ufh-blue);
     font-weight: 600;
     margin-bottom: 20px;
 }
 
+.stat-card {
+    text-align: center;
+    border-top: 3px solid var(--ufh-gold);
+}
+
+.stat-label {
+    color: var(--ufh-grey-600);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.stat-value {
+    color: var(--ufh-blue);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.login-card {
+    max-width: 400px;
+    margin-top: 40px;
+}
+
+.login-icon {
+    font-size: 2.4rem;
+    color: var(--ufh-black);
+}
+
+/* ---------- Tables ---------- */
+.table th {
+    background-color: var(--ufh-blue);
+    color: var(--ufh-white);
+    font-weight: 600;
+    border-color: var(--ufh-blue);
+}
+
+/* ---------- Bootstrap overrides ---------- */
+.btn-primary {
+    background-color: var(--ufh-blue);
+    border-color: var(--ufh-blue);
+    color: var(--ufh-white);
+}
+
+    .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+        background-color: var(--ufh-blue-dark);
+        border-color: var(--ufh-blue-dark);
+        color: var(--ufh-white);
+    }
+
+.btn-outline-primary {
+    color: var(--ufh-blue);
+    border-color: var(--ufh-blue);
+}
+
+    .btn-outline-primary:hover {
+        background-color: var(--ufh-blue);
+        border-color: var(--ufh-blue);
+        color: var(--ufh-white);
+    }
+
+.btn-outline-secondary {
+    color: var(--ufh-black);
+    border-color: var(--ufh-grey-600);
+}
+
+    .btn-outline-secondary:hover {
+        background-color: var(--ufh-black);
+        border-color: var(--ufh-black);
+        color: var(--ufh-white);
+    }
+
+.btn-success, .btn-outline-success { /* Check In / Approve style buttons: gold instead of green */
+    background-color: var(--ufh-gold);
+    border-color: var(--ufh-gold);
+    color: var(--ufh-black);
+}
+
+.btn-outline-success {
+    background-color: transparent;
+}
+
+    .btn-outline-success:hover, .btn-success:hover {
+        background-color: var(--ufh-gold);
+        border-color: var(--ufh-gold);
+        color: var(--ufh-black);
+    }
+
+a {
+    color: var(--ufh-blue);
+}
+
+    a:hover {
+        color: var(--ufh-blue-dark);
+    }
+
+.text-primary {
+    color: var(--ufh-blue) !important;
+}
+
+.bg-primary {
+    background-color: var(--ufh-blue) !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--ufh-blue);
+    box-shadow: 0 0 0 0.2rem rgba(0, 75, 135, 0.2);
+}
+
+/* ---------- Status badges ---------- */
 .badge-scheduled {
-    background-color: var(--clinic-blue);
-}
-
-.badge-completed {
-    background-color: var(--clinic-success);
-}
-
-.badge-cancelled, .badge-missed {
-    background-color: var(--clinic-danger);
+    background-color: var(--ufh-blue);
 }
 
 .badge-checkedin, .badge-inconsultation {
-    background-color: var(--clinic-warning);
-    color: #263238;
+    background-color: var(--ufh-gold);
+    color: var(--ufh-black);
+}
+
+.badge-completed {
+    background-color: var(--ufh-black);
+}
+
+.badge-cancelled, .badge-missed {
+    background-color: var(--ufh-grey-600);
 }
 
 @media (max-width: 767px) {
     .clinic-sidebar {
         position: absolute;
-        left: -220px;
+        left: -230px;
         transition: left 0.2s ease;
         z-index: 1000;
         height: 100%;

@@ -9,7 +9,7 @@ namespace ForteCommunityClinic.Patients
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            AuthHelper.RequireRole(this, "Receptionist", "Doctor", "Nurse", "Admin");
+            AuthHelper.RequireRole(this, "Receptionist", "Doctor", "Admin");
 
             int patientId;
             if (!int.TryParse(Request.QueryString["id"], out patientId))

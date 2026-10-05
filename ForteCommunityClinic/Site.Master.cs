@@ -1,6 +1,6 @@
 ﻿using System;
-using ForteCommunityClinic.DAL;
 using System.Data.SqlClient;
+using ForteCommunityClinic.DAL;
 
 namespace ForteCommunityClinic
 {
@@ -8,26 +8,26 @@ namespace ForteCommunityClinic
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserID"] == null)
-            {
-                lblUserInfo.Text = "Not logged in";
-                return;
-            }
+            bool loggedIn = Session["UserID"] != null;
 
-            lblUserInfo.Text = Session["FullName"] + " (" + Session["Role"] + ")";
+            // Login / Register pages: no sidebar, no user bar
+            phSidebar.Visible = loggedIn;
+            phUserBar.Visible = loggedIn;
+            if (!loggedIn) return;
 
             string role = Session["Role"]?.ToString();
 
+            // HtmlEncode so a name containing HTML can't inject markup into the page
+            lblUserInfo.Text = Server.HtmlEncode(Session["FullName"] + " (" + role + ")");
+
             phMyProfileNav.Visible = role == "Patient";
-            phPatientsNav.Visible = role == "Receptionist" || role == "Doctor" || role == "Nurse" || role == "Admin";
+            phPatientsNav.Visible = role == "Receptionist" || role == "Doctor" || role == "Admin";
             phAppointmentsNav.Visible = true;
-            phNursingNav.Visible = role == "Nurse";
-            phConsultationsNav.Visible = role == "Doctor";
+            phTodaysPatientsNav.Visible = role == "Doctor";
             phPharmacyNav.Visible = role == "Pharmacist";
             phBillingNav.Visible = role == "Receptionist" || role == "Patient";
             phClaimsNav.Visible = role == "Receptionist";
             phReportsNav.Visible = role == "ClinicManager" || role == "Admin";
-            phStaffApprovalsNav.Visible = role == "Receptionist" || role == "Admin";
             phAdminNav.Visible = role == "Admin";
 
             lnkAppointments.HRef = role == "Patient" ? "~/Appointments/MyAppointments.aspx" : "~/Appointments/AppointmentList.aspx";

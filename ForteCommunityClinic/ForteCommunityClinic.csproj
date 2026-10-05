@@ -71,9 +71,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\MyProfile.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="Account\StaffRegister.aspx" />
     <Content Include="Admin\AuditLogs.aspx" />
-    <Content Include="Admin\StaffApprovals.aspx" />
     <Content Include="Appointments\AppointmentCreate.aspx" />
     <Content Include="Appointments\AppointmentList.aspx" />
     <Content Include="Appointments\AppointmentReschedule.aspx" />
@@ -134,8 +132,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Site.css" />
-    <Content Include="TestConnection.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -167,26 +163,12 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\StaffRegister.aspx.cs">
-      <DependentUpon>StaffRegister.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\StaffRegister.aspx.designer.cs">
-      <DependentUpon>StaffRegister.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\AuditLogs.aspx.cs">
       <DependentUpon>AuditLogs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\AuditLogs.aspx.designer.cs">
       <DependentUpon>AuditLogs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\StaffApprovals.aspx.cs">
-      <DependentUpon>StaffApprovals.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\StaffApprovals.aspx.designer.cs">
-      <DependentUpon>StaffApprovals.aspx</DependentUpon>
     </Compile>
     <Compile Include="Appointments\AppointmentCreate.aspx.cs">
       <DependentUpon>AppointmentCreate.aspx</DependentUpon>
@@ -455,13 +437,6 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="TestConnection.aspx.cs">
-      <DependentUpon>TestConnection.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestConnection.aspx.designer.cs">
-      <DependentUpon>TestConnection.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

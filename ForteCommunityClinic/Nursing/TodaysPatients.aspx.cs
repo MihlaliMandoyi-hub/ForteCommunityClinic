@@ -10,7 +10,7 @@ namespace ForteCommunityClinic.Nursing
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            AuthHelper.RequireRole(this, "Nurse", "Admin");
+            AuthHelper.RequireRole(this, "Doctor", "Admin");
 
             if (!IsPostBack)
             {
@@ -33,10 +33,14 @@ namespace ForteCommunityClinic.Nursing
                     JOIN Users u2 ON d.UserID = u2.UserID
                     JOIN AppointmentStatuses s ON a.AppointmentStatusID = s.AppointmentStatusID
                     WHERE a.AppointmentDate = CAST(GETDATE() AS DATE)
-                      AND s.StatusName IN ('Scheduled', 'Checked In')
-                    ORDER BY a.AppointmentTime", conn);
+  AND s.StatusName IN ('Scheduled', 'Checked In')
+  AND (@Role <> 'Doctor' OR a.DoctorID = (SELECT DoctorID FROM Doctors WHERE UserID = @UserID))
+ORDER BY a.AppointmentTime", conn);
 
-                conn.Open();
+				cmd.Parameters.AddWithValue("@Role", Session["Role"]?.ToString() ?? "");
+				cmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
+
+				conn.Open();
                 var adapter = new SqlDataAdapter(cmd);
                 var dt = new DataTable();
                 adapter.Fill(dt);

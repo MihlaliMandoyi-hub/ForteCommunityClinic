@@ -13,7 +13,7 @@ namespace ForteCommunityClinic.Appointments
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            AuthHelper.RequireRole(this, "Receptionist", "Doctor", "Nurse", "Admin");
+            AuthHelper.RequireRole(this, "Receptionist", "Doctor", "Admin");
             IsDoctorView = Session["Role"]?.ToString() == "Doctor";
 
             if (!IsPostBack)

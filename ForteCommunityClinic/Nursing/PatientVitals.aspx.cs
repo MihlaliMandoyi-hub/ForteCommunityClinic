@@ -11,7 +11,7 @@ namespace ForteCommunityClinic.Nursing
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            AuthHelper.RequireRole(this, "Nurse", "Admin");
+            AuthHelper.RequireRole(this, "Doctor", "Admin");
 
             if (!int.TryParse(Request.QueryString["appointmentId"], out appointmentId))
             {
@@ -57,11 +57,11 @@ namespace ForteCommunityClinic.Nursing
             using (var conn = DatabaseHelper.GetConnection())
             {
                 var cmd = new SqlCommand(@"
-                    INSERT INTO PatientVitals
-                        (AppointmentID, NurseID, Temperature, Weight, Height, BloodPressure, PulseRate, OxygenSaturation)
-                    VALUES
-                        (@AppointmentID, (SELECT NurseID FROM Nurses WHERE UserID = @UserID),
-                         @Temperature, @Weight, @Height, @BloodPressure, @PulseRate, @OxygenSaturation)", conn);
+    INSERT INTO PatientVitals
+        (AppointmentID, DoctorID, Temperature, Weight, Height, BloodPressure, PulseRate, OxygenSaturation)
+    VALUES
+        (@AppointmentID, (SELECT DoctorID FROM Doctors WHERE UserID = @UserID),
+         @Temperature, @Weight, @Height, @BloodPressure, @PulseRate, @OxygenSaturation)", conn);
 
                 cmd.Parameters.AddWithValue("@AppointmentID", appointmentId);
                 cmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
