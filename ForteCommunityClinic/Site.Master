@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="ForteCommunityClinic.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forte Community Clinic</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <nav class="top-navbar d-flex justify-content-between align-items-center px-3">
+            <div class="d-flex align-items-center">
+                <span class="clinic-brand">🏥 Forte Community Clinic</span>
+            </div>
+            <div class="d-flex align-items-center text-white">
+                <a href="~/Notifications/NotificationList.aspx" runat="server" class="text-white me-3">
+                    🔔 <asp:Label ID="lblUnreadCount" runat="server" CssClass="badge bg-danger" />
+                </a>
+                <asp:Label ID="lblUserInfo" runat="server" CssClass="me-3" />
+                <asp:LinkButton ID="btnLogout" runat="server" CssClass="btn btn-sm btn-outline-light" OnClick="btnLogout_Click">Logout</asp:LinkButton>
+            </div>
+        </nav>
+
+        <div class="clinic-layout">
+
+            <aside class="clinic-sidebar" id="clinicSidebar">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="~/Dashboard.aspx" runat="server">📊 Dashboard</a></li>
+
+                    <asp:PlaceHolder ID="phMyProfileNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" href="~/Account/MyProfile.aspx" runat="server">👤 My Profile</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phPatientsNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" href="~/Patients/PatientList.aspx" runat="server">👤 Patients</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phAppointmentsNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" id="lnkAppointments" href="~/Appointments/AppointmentList.aspx" runat="server">📅 Appointments</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phNursingNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" href="~/Nursing/TodaysPatients.aspx" runat="server">💉 Nursing</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phConsultationsNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" href="~/Consultations/ConsultationCreate.aspx" runat="server">🩺 Consultations</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phPharmacyNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" href="~/Pharmacy/MedicationList.aspx" runat="server">💊 Pharmacy</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phBillingNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" id="lnkBilling" href="~/Billing/BillCreate.aspx" runat="server">💳 Billing</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phClaimsNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" href="~/Claims/ClaimList.aspx" runat="server">📄 Claims</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phReportsNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" href="~/Reports/RevenueReport.aspx" runat="server">📈 Reports</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phStaffApprovalsNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" href="~/Admin/StaffApprovals.aspx" runat="server">✅ Staff Approvals</a></li>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phAdminNav" runat="server" Visible="false">
+                        <li class="nav-item"><a class="nav-link" href="~/Admin/UserManagement.aspx" runat="server">⚙️ Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Admin/AuditLogs.aspx" runat="server">📝 Audit Logs</a></li>
+                    </asp:PlaceHolder>
+                </ul>
+            </aside>
+
+            <main class="clinic-main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </main>
+        </div>
+
+        <footer class="clinic-footer text-center py-2">
+            &copy; <%: DateTime.Now.Year %> Forte Community Clinic Management System
+        </footer>
+
+    </form>
+</body>
+</html>
